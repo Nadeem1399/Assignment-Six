@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Change on Click</title>
+    <style>
+        #click {
+            width: 200px;
+            height: 200px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="click"></div>
+
+    <script>
+        // Function to generate a random integer between 1 and 10
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Function to get a random color based on the generated integer
+        function getRandomColor() {
+            const randomNum = getRandomInt(1, 10);
+            let color;
+
+            switch (randomNum) {
+                case 1:
+                    color = 'black';
+                    break;
+                case 2:
+                    color = 'white';
+                    break;
+                case 3:
+                    color = 'blue';
+                    break;
+                case 4:
+                    color = 'green';
+                    break;
+                case 5:
+                    color = 'purple';
+                    break;
+                case 6:
+                    color = 'yellow';
+                    break;
+                case 7:
+                    color = 'orange';
+                    break;
+                case 8:
+                    color = 'red';
+                    break;
+                case 9:
+                    color = 'pink';
+                    break;
+                case 10:
+                    color = 'gray';
+                    break;
+                default:
+                    color = 'black'; // fallback color
+            }
+
+            // Change the background color of the div
+            document.getElementById('click').style.backgroundColor = color;
+        }
+
+        // Attach the click event handler to the div
+        document.getElementById('click').onclick = getRandomColor;
+    </script>
+</body>
+</html>
